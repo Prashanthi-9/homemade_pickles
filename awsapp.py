@@ -17,8 +17,8 @@ sns = boto3.client('sns', region_name=AWS_REGION)
 
 # ---- DynamoDB Tables ----
 user= dynamodb.Table('pickles_users')
-products_tbl = dynamodb.Table('pickles_products')
-orders_tbl = dynamodb.Table('pickles_orders')
+products = dynamodb.Table('pickles_products')
+orders = dynamodb.Table('pickles_orders')
 
 # ---- Routes ----
 
