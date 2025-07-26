@@ -16,7 +16,7 @@ dynamodb = boto3.resource('dynamodb', region_name=AWS_REGION)
 sns = boto3.client('sns', region_name=AWS_REGION)
 
 # ---- DynamoDB Tables ----
-users_tbl = dynamodb.Table('pickles_users')
+user= dynamodb.Table('pickles_users')
 products_tbl = dynamodb.Table('pickles_products')
 orders_tbl = dynamodb.Table('pickles_orders')
 
