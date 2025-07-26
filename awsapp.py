@@ -6,7 +6,7 @@ from botocore.exceptions import ClientError
 
 # ---- Configuration ----
 AWS_REGION = 'us-east-1'
-SNS_TOPIC_ARN = os.getenv('SNS_TOPIC_ARN')  # set this in your environment variables
+SNS_TOPIC_ARN = os.getenv('arn:aws:sns:us-east-1:982534367200:HomemadePicklesOrders')  # set this in your environment variables
 
 app = Flask(__name__)
 app.secret_key = os.getenv('FLASK_SECRET', 'supersecretkey')
