@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+  <h3 class="mb-4">Your Cart</h3>
+  {% if items %}
+    <form method="POST" action="{{ url_for('checkout') }}">
+      <table class="table table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th>Product</th>
+            <th>Qty</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for product, qty in items %}
+          <tr>
+            <td>{{ product[1] }}</td>
+            <td>{{ qty }}</td>
+            <td>₹{{ product[2] * qty }}</td>
+          </tr>
+          {% endfor %}
+          <tr>
+            <td colspan="2" class="text-end"><strong>Total</strong></td>
+            <td><strong>₹{{ total }}</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h5 class="mt-4">Payment Details</h5>
+      <div class="mb-3">
+        <label>Payment Method</label>
+        <select name="payment_method" class="form-select" required>
+          <option value="Cash on Delivery">Cash on Delivery</option>
+          <option value="UPI">UPI</option>
+          <option value="Card">Credit/Debit Card</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-success">Proceed to Checkout</button>
+    </form>
+  {% else %}
+    <p>Your cart is empty.</p>
+  {% endif %}
+</div>
+{% endblock %}

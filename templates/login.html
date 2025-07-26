@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    background: url('/static/images/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  .blur-overlay {
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 56px; /* offset for navbar */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    color: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(15px);
+    text-shadow: 1px 1px 2px #000;
+  }
+
+  .glass-card h3 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+
+  .form-control {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+  }
+
+  .form-control::placeholder {
+    color: #ddd;
+  }
+
+  .btn-success {
+    background-color: #28a745;
+    border: none;
+    font-weight: bold;
+  }
+
+  .btn-success:hover {
+    background-color: #218838;
+  }
+
+  label {
+    font-weight: 500;
+    color: white;
+  }
+</style>
+
+<div class="blur-overlay">
+  <form method="post" class="glass-card">
+    <h3>Login</h3>
+    <div class="mb-3">
+      <label>Username</label>
+      <input type="text" name="username" class="form-control" placeholder="Enter your username" required>
+    </div>
+    <div class="mb-3">
+      <label>Password</label>
+      <input type="password" name="password" class="form-control" placeholder="Enter your password" required>
+    </div>
+    <button type="submit" class="btn btn-success w-100 mt-3">Login</button>
+  </form>
+</div>
+{% endblock %}

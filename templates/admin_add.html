@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5" style="max-width: 500px;">
+  <h3 class="mb-4 text-center">Add New Pickle</h3>
+  <form method="POST">
+    <div class="mb-3">
+      <label>Name</label>
+      <input type="text" name="name" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label>Price</label>
+      <input type="number" name="price" class="form-control" step="0.01" required>
+    </div>
+    <div class="mb-3">
+      <label>Quantity</label>
+      <input type="number" name="quantity" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label>Image URL</label>
+      <input type="text" name="image" class="form-control" placeholder="/static/images/pickle1.jpg">
+    </div>
+    <button class="btn btn-success w-100">Add Pickle</button>
+  </form>
+</div>
+{% endblock %}

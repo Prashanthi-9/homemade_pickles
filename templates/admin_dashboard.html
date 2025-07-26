@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5 text-center">
+  <h2 class="mb-4">Welcome, Admin!</h2>
+  <div class="d-grid gap-3">
+    <a href="{{ url_for('admin_add_product') }}" class="btn btn-success btn-lg">➕ Add Pickle</a>
+    <a href="{{ url_for('admin_stock') }}" class="btn btn-primary btn-lg">📦 View Stock</a>
+    <a href="{{ url_for('admin_orders') }}" class="btn btn-warning btn-lg">📋 View Orders</a>
+  </div>
+</div>
+{% endblock %}
